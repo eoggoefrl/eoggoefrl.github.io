@@ -1,0 +1,1689 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>ลอยกระทงกับเค้านะ 💗</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Mali:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html {
+    width:100%;
+    min-height:100%;
+    overflow-x:hidden;
+    scroll-behavior:smooth;
+}
+
+body {
+    width:100%;
+    min-height:100vh;
+    min-height:100dvh;
+    font-family:'Kanit',sans-serif;
+    color:white;
+    overflow-x:hidden;
+    position:relative;
+    background:
+        radial-gradient(ellipse at 50% 25%,rgba(91,115,190,.45),transparent 48%),
+        linear-gradient(180deg,#070d29 0%,#14254f 42%,#123d62 75%,#06172d 100%);
+}
+
+/* ================= หน้าแรก ================= */
+
+.sky {
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+    background-image:
+        radial-gradient(2px 2px at 10% 15%,white 90%,transparent),
+        radial-gradient(2px 2px at 25% 35%,#fff3c4 90%,transparent),
+        radial-gradient(1.5px 1.5px at 45% 12%,white 90%,transparent),
+        radial-gradient(2px 2px at 70% 25%,white 90%,transparent),
+        radial-gradient(2px 2px at 88% 17%,#fff3c4 90%,transparent),
+        radial-gradient(1px 1px at 60% 45%,white 90%,transparent),
+        radial-gradient(2px 2px at 35% 55%,white 90%,transparent),
+        radial-gradient(1.5px 1.5px at 95% 48%,white 90%,transparent);
+    background-size:350px 250px;
+    animation:twinkle 4s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity:.5; }
+    to { opacity:1; }
+}
+
+.star-field {
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:1;
+    overflow:hidden;
+}
+
+.star {
+    position:absolute;
+    color:#fff5cf;
+    animation:starTwinkle 3s ease-in-out infinite alternate;
+    text-shadow:0 0 10px #fff1b5,0 0 20px #ffe7a0;
+}
+
+.star:nth-child(1) { top:12%;left:15%;font-size:13px;animation-delay:.2s; }
+.star:nth-child(2) { top:28%;left:35%;font-size:10px;animation-delay:1.2s; }
+.star:nth-child(3) { top:18%;left:75%;font-size:15px;animation-delay:.5s; }
+.star:nth-child(4) { top:40%;left:88%;font-size:11px;animation-delay:2s; }
+.star:nth-child(5) { top:48%;left:12%;font-size:12px;animation-delay:1.5s; }
+.star:nth-child(6) { top:32%;left:58%;font-size:14px;animation-delay:.8s; }
+.star:nth-child(7) { top:8%;left:48%;font-size:9px;animation-delay:2.5s; }
+.star:nth-child(8) { top:52%;left:70%;font-size:12px;animation-delay:1.8s; }
+
+@keyframes starTwinkle {
+    from { opacity:.2;transform:scale(.7) rotate(0deg); }
+    to { opacity:1;transform:scale(1.3) rotate(45deg); }
+}
+
+.moon {
+    position:fixed;
+    top:9%;
+    right:13%;
+    width:105px;
+    height:105px;
+    border-radius:50%;
+    background:#fff1c9;
+    box-shadow:
+        0 0 30px rgba(255,237,190,.7),
+        0 0 80px rgba(255,237,190,.3),
+        0 0 150px rgba(255,237,190,.15);
+    z-index:0;
+}
+
+.shooting-star {
+    position:fixed;
+    top:15%;
+    left:-100px;
+    width:100px;
+    height:2px;
+    background:linear-gradient(90deg,transparent,white);
+    transform:rotate(-25deg);
+    animation:shooting 7s linear infinite;
+    animation-delay:2s;
+    z-index:1;
+    pointer-events:none;
+}
+
+@keyframes shooting {
+    0% { transform:translate(0,0) rotate(-25deg);opacity:0; }
+    5% { opacity:1; }
+    20% { transform:translate(110vw,40vh) rotate(-25deg);opacity:0; }
+    100% { transform:translate(110vw,40vh) rotate(-25deg);opacity:0; }
+}
+
+.sky-lantern {
+    position:fixed;
+    bottom:-100px;
+    z-index:1;
+    pointer-events:none;
+    font-size:30px;
+    opacity:0;
+    filter:drop-shadow(0 0 12px rgba(255,190,100,.7));
+    animation:lanternRise 18s linear infinite;
+}
+
+.lantern-1 { left:12%;animation-delay:0s;font-size:27px; }
+.lantern-2 { left:78%;animation-delay:5s;font-size:35px; }
+.lantern-3 { left:45%;animation-delay:10s;font-size:24px; }
+.lantern-4 { left:90%;animation-delay:13s;font-size:28px; }
+
+@keyframes lanternRise {
+    0% { transform:translate(0,0) rotate(-5deg);opacity:0; }
+    10% { opacity:.8; }
+    50% { transform:translate(25px,-55vh) rotate(7deg);opacity:.9; }
+    90% { opacity:.7; }
+    100% { transform:translate(-15px,-115vh) rotate(-5deg);opacity:0; }
+}
+
+.fireflies {
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:1;
+}
+
+.firefly {
+    position:absolute;
+    width:5px;
+    height:5px;
+    border-radius:50%;
+    background:#ffe9a6;
+    box-shadow:0 0 10px 3px rgba(255,226,130,.5);
+    animation:firefly 5s ease-in-out infinite alternate;
+}
+
+.firefly:nth-child(1) { left:12%;top:55%; }
+.firefly:nth-child(2) { left:80%;top:48%;animation-delay:2s; }
+.firefly:nth-child(3) { left:25%;top:75%;animation-delay:1s; }
+.firefly:nth-child(4) { left:90%;top:70%;animation-delay:3s; }
+.firefly:nth-child(5) { left:65%;top:60%;animation-delay:1.5s; }
+.firefly:nth-child(6) { left:42%;top:82%;animation-delay:2.5s; }
+
+@keyframes firefly {
+    from { transform:translate(0,0);opacity:.2; }
+    to { transform:translate(20px,-35px);opacity:1; }
+}
+
+/* น้ำหน้าแรก */
+
+.water {
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:29%;
+    z-index:0;
+    pointer-events:none;
+    overflow:hidden;
+    background:
+        radial-gradient(ellipse at 50% 0%,rgba(255,219,157,.25),transparent 55%),
+        linear-gradient(180deg,rgba(16,55,89,.5),#06172d 85%);
+    border-top:1px solid rgba(255,255,255,.15);
+}
+
+.water::before {
+    content:"";
+    position:absolute;
+    top:8%;
+    left:25%;
+    width:50%;
+    height:5px;
+    border-radius:50%;
+    background:rgba(255,224,169,.7);
+    filter:blur(6px);
+    box-shadow:
+        0 20px 12px rgba(255,224,169,.22),
+        0 45px 15px rgba(255,224,169,.18),
+        0 75px 20px rgba(255,224,169,.13),
+        0 110px 25px rgba(255,224,169,.1);
+    animation:waterGlow 4s ease-in-out infinite alternate;
+}
+
+.water::after {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:repeating-linear-gradient(
+        180deg,
+        transparent 0px,
+        rgba(150,205,245,.10) 2px,
+        transparent 5px,
+        transparent 15px
+    );
+    animation:waveMove 5s linear infinite;
+}
+
+@keyframes waterGlow {
+    from { opacity:.3;transform:scaleX(.7); }
+    to { opacity:1;transform:scaleX(1.2); }
+}
+
+@keyframes waveMove {
+    from { background-position-y:0; }
+    to { background-position-y:60px; }
+}
+
+.water-sparkle {
+    position:fixed;
+    bottom:4%;
+    width:4px;
+    height:3px;
+    border-radius:50%;
+    background:#ffe7b0;
+    box-shadow:0 0 9px 3px rgba(255,221,155,.35);
+    z-index:1;
+    pointer-events:none;
+    animation:sparkleWater 3s ease-in-out infinite alternate;
+}
+
+.water-sparkle:nth-of-type(1) { left:10%;bottom:12%; }
+.water-sparkle:nth-of-type(2) { left:25%;bottom:6%;animation-delay:1s; }
+.water-sparkle:nth-of-type(3) { left:40%;bottom:17%;animation-delay:1.5s; }
+.water-sparkle:nth-of-type(4) { left:60%;bottom:8%;animation-delay:.5s; }
+.water-sparkle:nth-of-type(5) { left:75%;bottom:15%;animation-delay:2s; }
+.water-sparkle:nth-of-type(6) { left:90%;bottom:5%;animation-delay:1.2s; }
+
+@keyframes sparkleWater {
+    from { opacity:.15;transform:scale(.6); }
+    to { opacity:1;transform:scale(1.8); }
+}
+
+.river-krathong {
+    position:fixed;
+    bottom:8%;
+    z-index:1;
+    pointer-events:none;
+    font-size:34px;
+    filter:drop-shadow(0 0 12px rgba(255,220,150,.7));
+    animation:krathongFloat 6s ease-in-out infinite;
+}
+
+.krathong-1 { left:8%;bottom:10%; }
+.krathong-2 { left:72%;bottom:14%;font-size:29px;animation-delay:2s; }
+.krathong-3 { left:43%;bottom:5%;font-size:25px;animation-delay:3s; }
+
+@keyframes krathongFloat {
+    0%,100% { transform:translate(0,0) rotate(-5deg); }
+    50% { transform:translate(20px,-8px) rotate(5deg); }
+}
+
+/* กล่องหน้าแรก */
+
+.container {
+    position:relative;
+    z-index:2;
+    width:min(90%,500px);
+    margin:55px auto;
+    padding:35px 25px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:28px;
+    background:rgba(255,255,255,.09);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    box-shadow:0 15px 50px rgba(0,0,0,.25);
+}
+
+.greeting {
+    font-family:'Mali',cursive;
+    font-size:clamp(22px,5.5vw,29px);
+    font-weight:700;
+    letter-spacing:.5px;
+    line-height:1.6;
+    background:linear-gradient(90deg,#fff0bd,#ffb6d5,#ffe7a4);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    filter:drop-shadow(0 0 12px rgba(255,190,210,.65));
+    margin-bottom:22px;
+}
+
+.krathong {
+    width:190px;
+    height:190px;
+    display:block;
+    margin:0 auto 8px;
+    object-fit:contain;
+    animation:float 3s ease-in-out infinite;
+    filter:drop-shadow(0 0 15px rgba(255,220,150,.5));
+}
+
+@keyframes float {
+    0%,100% { transform:translateY(0) rotate(-4deg); }
+    50% { transform:translateY(-13px) rotate(4deg); }
+}
+
+h1 {
+    font-size:29px;
+    margin:12px 0;
+    font-weight:600;
+}
+
+.subtitle {
+    font-size:15px;
+    color:#f6dce9;
+    margin-bottom:24px;
+}
+
+.message {
+    line-height:2;
+    font-size:16px;
+    color:#fff5fa;
+    margin:20px 0;
+}
+
+.name { color:#ffd2e3;font-weight:600; }
+
+button {
+    border:none;
+    padding:14px 25px;
+    border-radius:30px;
+    background:linear-gradient(135deg,#ffb5cf,#ffdfaa);
+    color:#45233d;
+    font-family:'Kanit',sans-serif;
+    font-size:16px;
+    font-weight:500;
+    cursor:pointer;
+    box-shadow:0 5px 20px rgba(255,190,210,.25);
+    transition:.3s;
+    min-height:48px;
+    max-width:100%;
+}
+
+button:hover {
+    transform:translateY(-3px) scale(1.04);
+    box-shadow:0 8px 25px rgba(255,190,210,.4);
+}
+
+button:disabled { cursor:default; }
+
+footer {
+    margin-top:25px;
+    color:#d6d8f3;
+    font-size:12px;
+}
+
+/* ================= หน้าที่สอง ================= */
+
+#secondPage {
+    display:none;
+    position:relative;
+    z-index:3;
+    width:100%;
+    min-height:100vh;
+    min-height:100dvh;
+    padding:35px 15px 70px;
+    overflow:hidden;
+    isolation:isolate;
+    background:
+        radial-gradient(ellipse at 50% 5%,rgba(255,202,226,.25),transparent 35%),
+        radial-gradient(ellipse at 15% 50%,rgba(158,113,214,.22),transparent 45%),
+        linear-gradient(180deg,#211337 0%,#38204e 35%,#382b62 65%,#111c3d 100%);
+}
+
+.second-moon {
+    position:absolute;
+    top:55px;
+    right:12%;
+    width:95px;
+    height:95px;
+    border-radius:50%;
+    background:radial-gradient(circle at 35% 35%,#fff9e7,#ffe2b5 65%,#f8c9a3);
+    box-shadow:0 0 30px rgba(255,224,183,.65),0 0 85px rgba(255,194,216,.3);
+    z-index:-1;
+}
+
+.second-moon::after {
+    content:"";
+    position:absolute;
+    width:150px;
+    height:200px;
+    top:80px;
+    left:-25px;
+    background:linear-gradient(180deg,rgba(255,222,178,.2),transparent);
+    filter:blur(15px);
+}
+
+.second-stars {
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+    background-image:
+        radial-gradient(2px 2px at 10% 10%,#fff 90%,transparent),
+        radial-gradient(2px 2px at 25% 22%,#ffd9ec 90%,transparent),
+        radial-gradient(2px 2px at 65% 15%,#fff1cb 90%,transparent),
+        radial-gradient(1px 1px at 82% 30%,#fff 90%,transparent),
+        radial-gradient(2px 2px at 45% 38%,#ffe3ef 90%,transparent),
+        radial-gradient(1px 1px at 92% 55%,#fff 90%,transparent);
+    background-size:280px 240px;
+    animation:secondTwinkle 5s ease-in-out infinite alternate;
+}
+
+@keyframes secondTwinkle {
+    from { opacity:.35; }
+    to { opacity:1; }
+}
+
+.petal {
+    position:absolute;
+    top:-40px;
+    color:#ffc6df;
+    font-size:20px;
+    opacity:.65;
+    pointer-events:none;
+    animation:petalFall linear infinite;
+    z-index:1;
+}
+
+.petal:nth-child(1) { left:8%;animation-duration:13s; }
+.petal:nth-child(2) { left:28%;animation-duration:16s;animation-delay:4s; }
+.petal:nth-child(3) { left:70%;animation-duration:14s;animation-delay:2s; }
+.petal:nth-child(4) { left:90%;animation-duration:18s;animation-delay:7s; }
+
+@keyframes petalFall {
+    0% { transform:translate(0,-10px) rotate(0deg);opacity:0; }
+    10% { opacity:.75; }
+    50% { transform:translate(45px,50vh) rotate(180deg); }
+    100% { transform:translate(-25px,110vh) rotate(360deg);opacity:0; }
+}
+
+.second-container {
+    position:relative;
+    z-index:3;
+    width:min(94%,600px);
+    margin:20px auto;
+    padding:30px 24px 35px;
+    text-align:center;
+    border:1px solid rgba(255,225,238,.35);
+    border-radius:35px;
+    background:linear-gradient(145deg,rgba(255,225,240,.13),rgba(255,255,255,.035));
+    box-shadow:0 20px 65px rgba(8,5,30,.35),inset 0 0 35px rgba(255,210,235,.06);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+}
+
+.second-container::before {
+    content:"✦";
+    position:absolute;
+    top:14px;
+    left:20px;
+    color:#ffe5b7;
+    font-size:20px;
+    text-shadow:0 0 12px #ffca9c;
+}
+
+.second-container::after {
+    content:"✧";
+    position:absolute;
+    bottom:12px;
+    right:20px;
+    color:#ffd7e8;
+    font-size:25px;
+    text-shadow:0 0 12px #ffb5d5;
+}
+
+.second-kicker {
+    font-family:'Mali',cursive;
+    font-size:13px;
+    letter-spacing:3px;
+    color:#f6c9e2;
+    margin-bottom:12px;
+}
+
+.second-title {
+    font-family:'Mali',cursive;
+    font-size:clamp(25px,6vw,34px);
+    font-weight:700;
+    line-height:1.6;
+    color:#ffe6c8;
+    text-shadow:0 0 18px rgba(255,190,210,.55);
+    margin-bottom:10px;
+}
+
+.second-text {
+    color:#ffeaf3;
+    line-height:2;
+    font-size:16px;
+    margin:15px 0;
+}
+
+/* ================= แม่น้ำ ================= */
+
+.river-scene {
+    position:relative;
+    height:290px;
+    margin:30px -24px 20px;
+    overflow:hidden;
+    isolation:isolate;
+    border-top:1px solid rgba(255,226,220,.35);
+    border-bottom:1px solid rgba(255,226,220,.2);
+    background:
+        radial-gradient(ellipse at 50% 0%,rgba(255,225,190,.38),transparent 48%),
+        linear-gradient(180deg,#75617f 0%,#53607f 16%,#355577 42%,#1c4267 70%,#102541 100%);
+}
+
+.river-scene::before {
+    content:"";
+    position:absolute;
+    top:0;
+    left:35%;
+    width:30%;
+    height:100%;
+    background:linear-gradient(
+        180deg,
+        rgba(255,238,203,.55),
+        rgba(255,222,190,.25) 25%,
+        rgba(255,207,207,.13) 58%,
+        transparent
+    );
+    filter:blur(13px);
+    transform:perspective(120px) rotateX(8deg);
+    animation:reflectionMove 5s ease-in-out infinite alternate;
+    z-index:0;
+    pointer-events:none;
+}
+
+@keyframes reflectionMove {
+    from { opacity:.45;transform:scaleX(.65) translateX(-8px); }
+    to { opacity:1;transform:scaleX(1.2) translateX(8px); }
+}
+
+.river-scene::after {
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:
+        linear-gradient(180deg,transparent 35%,rgba(5,19,43,.1) 100%),
+        repeating-linear-gradient(
+            180deg,
+            transparent 0px,
+            rgba(210,225,255,.08) 2px,
+            transparent 4px,
+            transparent 15px
+        );
+    animation:waterSurface 7s linear infinite;
+    z-index:1;
+}
+
+@keyframes waterSurface {
+    from { background-position:0 0; }
+    to { background-position:80px 50px; }
+}
+
+.river-texture {
+    position:absolute;
+    inset:0;
+    opacity:.55;
+    background:repeating-linear-gradient(
+        175deg,
+        transparent 0px,
+        transparent 10px,
+        rgba(210,225,255,.13) 11px,
+        transparent 13px,
+        transparent 24px
+    );
+    animation:textureFlow 8s linear infinite;
+    z-index:1;
+    pointer-events:none;
+}
+
+@keyframes textureFlow {
+    from { background-position:0 0; }
+    to { background-position:100px 40px; }
+}
+
+.river-wave {
+    position:absolute;
+    left:-20%;
+    width:140%;
+    height:2px;
+    border-radius:50%;
+    background:rgba(255,225,226,.36);
+    box-shadow:0 0 10px rgba(255,210,220,.2);
+    animation:riverWave 5s ease-in-out infinite alternate;
+    z-index:2;
+    pointer-events:none;
+}
+
+.river-wave:nth-child(2) { top:25%;animation-delay:0s; }
+.river-wave:nth-child(3) { top:43%;animation-delay:1s;width:120%; }
+.river-wave:nth-child(4) { top:62%;animation-delay:2s; }
+.river-wave:nth-child(5) { top:80%;animation-delay:.5s;width:110%; }
+
+@keyframes riverWave {
+    from { transform:translateX(-5%) scaleX(.8);opacity:.25; }
+    to { transform:translateX(5%) scaleX(1.1);opacity:.75; }
+}
+
+.river-glimmer {
+    position:absolute;
+    width:5px;
+    height:3px;
+    border-radius:50%;
+    background:#ffe6bd;
+    box-shadow:0 0 10px 3px rgba(255,220,175,.45);
+    animation:glimmer 2.5s ease-in-out infinite alternate;
+    z-index:2;
+    pointer-events:none;
+}
+
+.river-glimmer:nth-of-type(6) { left:20%;top:35%; }
+.river-glimmer:nth-of-type(7) { left:70%;top:55%;animation-delay:.8s; }
+.river-glimmer:nth-of-type(8) { left:45%;top:75%;animation-delay:1.2s; }
+.river-glimmer:nth-of-type(9) { left:85%;top:25%;animation-delay:.5s; }
+.river-glimmer:nth-of-type(10) { left:30%;top:85%;animation-delay:1.5s; }
+
+@keyframes glimmer {
+    from { opacity:.15;transform:scale(.6); }
+    to { opacity:1;transform:scale(1.8); }
+}
+
+/* แสงระลอกใต้น้ำ */
+
+.krathong-ripple {
+    position:absolute;
+    width:95px;
+    height:18px;
+    border:1px solid rgba(255,229,204,.55);
+    border-radius:50%;
+    filter:blur(.3px);
+    transform:translateX(-50%);
+    left:50%;
+    bottom:35%;
+    animation:ripple 3s ease-out infinite;
+}
+
+.krathong-person:nth-child(1) .krathong-ripple { animation-delay:0s; }
+.krathong-person:nth-child(2) .krathong-ripple { animation-delay:1s; }
+
+@keyframes ripple {
+    0% { transform:translateX(-50%) scale(.65);opacity:.65; }
+    100% { transform:translateX(-50%) scale(1.7);opacity:0; }
+}
+
+/* กระทงคู่ */
+
+.pair-area {
+    position:absolute;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:clamp(30px,12vw,85px);
+    z-index:4;
+    pointer-events:none;
+}
+
+.krathong-person {
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+    transform-origin:center center;
+    animation:pairFloat 3.5s ease-in-out infinite;
+    will-change:transform,opacity;
+}
+
+.krathong-person:nth-child(2) {
+    animation-delay:1s;
+}
+
+.pair-krathong {
+    font-size:clamp(65px,15vw,88px);
+    display:block;
+    position:relative;
+    z-index:2;
+    line-height:1.2;
+    filter:drop-shadow(0 0 18px rgba(255,221,165,.75));
+}
+
+/* กระทงของแตม: ชมพูทอง คงสีดอกบัวธรรมชาติ */
+
+.krathong-person:nth-child(1) .pair-krathong {
+    filter:drop-shadow(0 0 15px rgba(255,220,170,.75));
+}
+
+/* กระทงของเนย: ตกแต่งฟ้าเงินโดยไม่เปลี่ยนสีดอกบัว */
+
+.krathong-person:nth-child(2) .krathong-person {
+    position:relative;
+}
+
+.krathong-person:nth-child(2) .pair-krathong {
+    filter:drop-shadow(0 0 12px rgba(175,220,255,.55));
+    text-shadow:0 0 8px rgba(220,240,255,.25);
+}
+
+/* ฐานกระทงของเนย เพิ่มแสงฟ้าเงินใต้ดอกบัว */
+
+.krathong-person:nth-child(2)::before {
+    content:"";
+    position:absolute;
+    width:112px;
+    height:35px;
+    top:48px;
+    left:50%;
+    transform:translateX(-50%);
+    border-radius:50%;
+    background:
+        radial-gradient(ellipse at center,
+            rgba(220,240,255,.38) 0%,
+            rgba(150,205,255,.23) 42%,
+            rgba(120,170,235,0) 75%);
+    filter:blur(5px);
+    z-index:1;
+    pointer-events:none;
+}
+
+/* ประกายเงินเล็ก ๆ รอบกระทงเนย */
+
+.krathong-person:nth-child(2)::after {
+    content:"✧";
+    position:absolute;
+    top:4px;
+    right:-12px;
+    color:#e3f3ff;
+    font-size:21px;
+    text-shadow:
+        0 0 6px rgba(210,235,255,.95),
+        0 0 14px rgba(145,195,255,.8);
+    animation:silverSparkle 2.5s ease-in-out infinite alternate;
+    z-index:3;
+    pointer-events:none;
+}
+
+@keyframes silverSparkle {
+    from {
+        opacity:.35;
+        transform:scale(.7) rotate(0deg);
+    }
+    to {
+        opacity:1;
+        transform:scale(1.2) rotate(25deg);
+    }
+}
+
+/* ระลอกน้ำของแตม */
+
+.krathong-person:nth-child(1) .krathong-ripple {
+    border-color:rgba(255,225,180,.7);
+    box-shadow:0 0 12px rgba(255,205,145,.3);
+}
+
+/* ระลอกน้ำของเนย */
+
+.krathong-person:nth-child(2) .krathong-ripple {
+    border-color:rgba(175,220,255,.65);
+    box-shadow:
+        0 0 10px rgba(160,210,255,.25),
+        inset 0 0 10px rgba(160,210,255,.12);
+}
+
+/* ป้ายชื่อของแตม */
+
+.krathong-person:nth-child(1) .pair-label {
+    border-color:rgba(255,215,170,.55);
+    color:#fff0dd;
+}
+
+/* ป้ายชื่อของเนย */
+
+.krathong-person:nth-child(2) .pair-label {
+    border-color:rgba(175,220,255,.5);
+    color:#e5f2ff;
+    text-shadow:0 0 8px rgba(160,205,255,.45);
+    background:rgba(35,45,75,.58);
+    box-shadow:0 0 12px rgba(145,195,255,.2);
+}
+
+/* แสงสะท้อนใต้กระทงของแตม */
+
+.krathong-person:nth-child(1) .krathong-reflection {
+    background:rgba(255,207,158,.5);
+    box-shadow:0 0 15px rgba(255,207,158,.4);
+}
+
+/* แสงสะท้อนใต้กระทงของเนย */
+
+.krathong-person:nth-child(2) .krathong-reflection {
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(175,220,255,.65),
+        rgba(230,245,255,.85),
+        rgba(175,220,255,.65),
+        transparent
+    );
+    box-shadow:0 0 18px rgba(145,195,255,.4);
+}
+
+.pair-label {
+    font-family:'Mali',cursive;
+    font-size:13px;
+    color:#fff0dd;
+    background:rgba(39,24,65,.48);
+    border:1px solid rgba(255,231,205,.35);
+    padding:5px 13px;
+    border-radius:20px;
+    white-space:nowrap;
+    box-shadow:0 3px 12px rgba(0,0,0,.15);
+}
+
+.krathong-reflection {
+    position:absolute;
+    width:55px;
+    height:12px;
+    border-radius:50%;
+    background:rgba(255,207,158,.45);
+    filter:blur(8px);
+    bottom:-4px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+@keyframes pairFloat {
+    0%,100% { transform:translateY(0) rotate(-4deg); }
+    50% { transform:translateY(-10px) rotate(4deg); }
+}
+
+/* ================= อนิเมชั่นลอยกระทง ================= */
+
+#riverScene.released .krathong-person {
+    animation-duration:6s;
+    animation-timing-function:cubic-bezier(.22,.61,.36,1);
+    animation-fill-mode:forwards;
+    animation-iteration-count:1;
+}
+
+#riverScene.released .krathong-person:nth-child(1) {
+    animation-name:sailLeft;
+    animation-delay:0s;
+}
+
+#riverScene.released .krathong-person:nth-child(2) {
+    animation-name:sailRight;
+    animation-delay:.2s;
+}
+
+@keyframes sailLeft {
+    0% {
+        transform:translate(0,0) scale(1) rotate(-4deg);
+        opacity:1;
+    }
+    15% {
+        transform:translate(12px,-8px) scale(.95) rotate(3deg);
+        opacity:1;
+    }
+    40% {
+        transform:translate(30px,-40px) scale(.72) rotate(-3deg);
+        opacity:1;
+    }
+    70% {
+        transform:translate(43px,-82px) scale(.43) rotate(4deg);
+        opacity:.9;
+    }
+    100% {
+        transform:translate(48px,-125px) scale(.16) rotate(-2deg);
+        opacity:0;
+    }
+}
+
+@keyframes sailRight {
+    0% {
+        transform:translate(0,0) scale(1) rotate(4deg);
+        opacity:1;
+    }
+    15% {
+        transform:translate(-12px,-8px) scale(.95) rotate(-3deg);
+        opacity:1;
+    }
+    40% {
+        transform:translate(-30px,-40px) scale(.72) rotate(3deg);
+        opacity:1;
+    }
+    70% {
+        transform:translate(-43px,-82px) scale(.43) rotate(-4deg);
+        opacity:.9;
+    }
+    100% {
+        transform:translate(-48px,-125px) scale(.16) rotate(2deg);
+        opacity:0;
+    }
+}
+
+#riverScene.released .pair-label {
+    animation:labelFade 1.5s ease forwards;
+}
+
+#riverScene.released .krathong-ripple {
+    animation:rippleAway 4s ease-out forwards;
+}
+
+#riverScene.released .krathong-reflection {
+    animation:reflectionFade 5s ease forwards;
+}
+
+@keyframes labelFade {
+    to { opacity:0;transform:translateY(-15px); }
+}
+
+@keyframes rippleAway {
+    0% { opacity:.65;transform:translateX(-50%) scale(.7); }
+    100% { opacity:0;transform:translateX(-50%) scale(2.5); }
+}
+
+@keyframes reflectionFade {
+    0% { opacity:.7;transform:translateX(-50%) scale(1); }
+    100% { opacity:0;transform:translateX(-50%) scale(.2); }
+}
+
+/* แสงตอนปล่อยกระทง */
+
+.release-glow {
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:#fff1cb;
+    box-shadow:0 0 20px 10px rgba(255,220,180,.55);
+    opacity:0;
+    transform:translate(-50%,-50%);
+    z-index:3;
+    pointer-events:none;
+}
+
+#riverScene.released .release-glow {
+    animation:releaseGlow 2.5s ease-out forwards;
+}
+
+@keyframes releaseGlow {
+    0% { opacity:0;transform:translate(-50%,-50%) scale(.2); }
+    30% { opacity:1;transform:translate(-50%,-50%) scale(3); }
+    100% { opacity:0;transform:translate(-50%,-50%) scale(7); }
+}
+
+/* ================= คำอธิษฐาน ================= */
+
+.wish-card {
+    margin:25px auto;
+    padding:20px 17px;
+    border:1px solid rgba(255,220,231,.28);
+    border-radius:22px;
+    background:rgba(255,222,238,.08);
+    box-shadow:inset 0 0 20px rgba(255,220,235,.04);
+}
+
+.wish-heading {
+    color:#ffe2bd;
+    font-family:'Mali',cursive;
+    font-size:17px;
+    margin-bottom:12px;
+}
+
+#wishInput {
+    width:100%;
+    min-height:95px;
+    resize:vertical;
+    border:1px solid rgba(255,224,238,.3);
+    border-radius:15px;
+    padding:13px;
+    color:white;
+    background:rgba(30,19,55,.42);
+    outline:none;
+    font-family:'Kanit',sans-serif;
+    font-size:14px;
+    line-height:1.7;
+}
+
+#wishInput::placeholder { color:rgba(255,235,245,.55); }
+
+#wishInput:focus {
+    border-color:#ffd0e3;
+    box-shadow:0 0 15px rgba(255,190,220,.15);
+}
+
+#togetherMessage {
+    min-height:65px;
+    margin:22px 0;
+    color:#ffe5bd;
+    font-family:'Mali',cursive;
+    line-height:1.9;
+    font-size:16px;
+}
+
+#floatButton {
+    background:linear-gradient(135deg,#ffb4d3,#ffe0a9);
+    padding:15px 30px;
+    box-shadow:0 7px 25px rgba(255,175,210,.3);
+}
+
+#backButton {
+    display:block;
+    margin:18px auto 0;
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.3);
+    color:white;
+    box-shadow:none;
+}
+
+.second-footer {
+    margin-top:28px;
+    color:#e8cfe7;
+    font-size:12px;
+    line-height:1.8;
+}
+
+.heart {
+    position:fixed;
+    bottom:-30px;
+    z-index:10;
+    pointer-events:none;
+    font-size:22px;
+    animation:heartRise 5s linear forwards;
+}
+
+@keyframes heartRise {
+    to { transform:translateY(-110vh) rotate(30deg);opacity:0; }
+}
+
+/* ================= หน้าที่สาม: คำอวยพรจากแตมอ้วง ================= */
+
+#wishPage {
+    display:none;
+    position:relative;
+    z-index:5;
+    width:100%;
+    min-height:100vh;
+    min-height:100dvh;
+    padding:45px 18px;
+    overflow:hidden;
+    isolation:isolate;
+    color:#65445a;
+    background:
+        radial-gradient(circle at 10% 15%,rgba(255,255,255,.9),transparent 20%),
+        radial-gradient(circle at 90% 80%,rgba(255,208,220,.5),transparent 25%),
+        linear-gradient(145deg,#fff3e7,#ffe5ed 48%,#f8e8d9);
+}
+
+#wishPage::before,
+#wishPage::after {
+    content:"✿";
+    position:absolute;
+    color:rgba(205,145,153,.25);
+    font-size:150px;
+    z-index:-1;
+    pointer-events:none;
+}
+
+#wishPage::before {
+    top:15px;
+    left:-35px;
+    transform:rotate(-25deg);
+}
+
+#wishPage::after {
+    bottom:5px;
+    right:-30px;
+    transform:rotate(25deg);
+}
+
+.wish-page-inner {
+    width:min(94%,570px);
+    margin:15px auto;
+    text-align:center;
+}
+
+.wish-page-kicker {
+    font-family:'Mali',cursive;
+    color:#b47b82;
+    font-size:13px;
+    letter-spacing:3px;
+    margin-bottom:12px;
+}
+
+.wish-page-title {
+    font-family:'Mali',cursive;
+    font-size:clamp(25px,6vw,35px);
+    line-height:1.6;
+    color:#a85f78;
+    text-shadow:0 3px 12px rgba(190,120,140,.18);
+    margin-bottom:25px;
+}
+
+.letter-card {
+    position:relative;
+    padding:35px 25px;
+    border:1px solid rgba(190,140,120,.4);
+    border-radius:8px 8px 25px 25px;
+    background:linear-gradient(rgba(255,255,255,.82),rgba(255,250,242,.95));
+    box-shadow:
+        0 15px 40px rgba(120,75,80,.15),
+        inset 0 0 25px rgba(220,180,150,.12);
+}
+
+.letter-card::before {
+    content:"";
+    position:absolute;
+    inset:9px;
+    border:1px solid rgba(190,145,125,.25);
+    border-radius:5px 5px 19px 19px;
+    pointer-events:none;
+}
+
+.letter-flower {
+    font-size:35px;
+    margin-bottom:15px;
+    filter:drop-shadow(0 3px 5px rgba(200,130,150,.2));
+}
+
+.letter-greeting {
+    font-family:'Mali',cursive;
+    color:#b16d80;
+    font-size:21px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.letter-content {
+    position:relative;
+    z-index:1;
+    color:#765765;
+    font-size:15px;
+    line-height:2.2;
+    text-align:left;
+    white-space:pre-line;
+}
+
+.letter-divider {
+    width:75%;
+    height:1px;
+    margin:25px auto;
+    background:linear-gradient(90deg,transparent,#d8a6a5,transparent);
+}
+
+.letter-signature {
+    font-family:'Mali',cursive;
+    color:#b16d80;
+    font-size:17px;
+    line-height:2;
+    text-align:right;
+    margin-top:25px;
+}
+
+.letter-decoration {
+    margin-top:22px;
+    color:#c38c91;
+    font-size:20px;
+    letter-spacing:9px;
+}
+
+.wish-back-button {
+    margin-top:25px;
+    background:linear-gradient(135deg,#c58d9a,#e9b9ae);
+    color:white;
+    box-shadow:0 6px 20px rgba(180,120,140,.2);
+}
+
+@media(max-width:480px) {
+    #wishPage { padding:30px 12px; }
+    .letter-card { padding:30px 19px; }
+    .letter-content { font-size:14px; }
+    .letter-greeting { font-size:19px; }
+}
+
+/* ================= มือถือและแท็บเล็ต ================= */
+
+@media (max-width:480px) {
+    .container {
+        width:calc(100% - 30px);
+        margin:30px auto;
+        padding:25px 18px;
+        border-radius:24px;
+    }
+
+    .moon { width:70px;height:70px;right:7%;top:6%; }
+
+    .greeting {
+        font-size:clamp(19px,5.5vw,24px);
+        line-height:1.7;
+    }
+
+    .krathong { width:160px;height:160px; }
+    h1 { font-size:25px; }
+    .subtitle { font-size:14px; }
+    .message { font-size:14px;line-height:2; }
+
+    button {
+        width:100%;
+        font-size:15px;
+        padding:13px 15px;
+    }
+
+    .river-krathong { font-size:25px; }
+    .sky-lantern { font-size:24px; }
+    .water { height:25%; }
+
+    .second-container {
+        width:100%;
+        padding:27px 17px 32px;
+    }
+
+    .river-scene {
+        height:250px;
+        margin-left:-17px;
+        margin-right:-17px;
+    }
+
+    .second-text { font-size:14px; }
+    #togetherMessage { font-size:14px; }
+    .second-moon { width:65px;height:65px; }
+    .pair-label { font-size:11px;padding:4px 9px; }
+    .pair-area { gap:30px; }
+}
+
+@media (min-width:601px) and (max-width:900px) {
+    .container {
+        width:min(75%,560px);
+        margin:65px auto;
+        padding:40px 32px;
+    }
+
+    .greeting { font-size:29px; }
+    .krathong { width:200px;height:200px; }
+    h1 { font-size:32px; }
+    .message { font-size:17px; }
+    button { font-size:17px;padding:16px 30px; }
+    .second-container { width:min(85%,650px); }
+    .river-scene { height:300px; }
+}
+
+@media (min-width:901px) {
+    .container {
+        width:min(65%,600px);
+        margin:55px auto;
+        padding:40px;
+    }
+
+    .krathong { width:210px;height:210px; }
+    .message { font-size:17px; }
+    .second-container { width:min(70%,700px); }
+    .river-scene { height:330px; }
+}
+
+@media (orientation:landscape) and (max-height:500px) {
+    .container { margin:20px auto;padding:25px; }
+    .moon { width:65px;height:65px; }
+    .krathong { width:140px;height:140px; }
+    #secondPage { padding-top:15px; }
+    .second-container { margin:10px auto; }
+}
+
+/* ลดเอฟเฟกต์พื้นหลัง แต่ยังคงอนิเมชั่นกระทงหลักไว้ */
+
+@media (prefers-reduced-motion:reduce) {
+    .sky,
+    .star,
+    .shooting-star,
+    .sky-lantern,
+    .firefly,
+    .water::before,
+    .water::after,
+    .water-sparkle,
+    .river-krathong,
+    .petal,
+    .second-stars,
+    .river-texture,
+    .river-wave,
+    .river-glimmer {
+        animation-duration:8s;
+    }
+
+    html { scroll-behavior:auto; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="sky"></div>
+
+<div class="star-field">
+    <span class="star">✦</span>
+    <span class="star">✧</span>
+    <span class="star">✦</span>
+    <span class="star">✧</span>
+    <span class="star">✦</span>
+    <span class="star">✧</span>
+    <span class="star">✦</span>
+    <span class="star">✧</span>
+</div>
+
+<div class="moon"></div>
+<div class="shooting-star"></div>
+
+<div class="sky-lantern lantern-1">🏮</div>
+<div class="sky-lantern lantern-2">🏮</div>
+<div class="sky-lantern lantern-3">🏮</div>
+<div class="sky-lantern lantern-4">🏮</div>
+
+<div class="fireflies">
+    <span class="firefly"></span>
+    <span class="firefly"></span>
+    <span class="firefly"></span>
+    <span class="firefly"></span>
+    <span class="firefly"></span>
+    <span class="firefly"></span>
+</div>
+
+<div class="water"></div>
+
+<div class="water-sparkle"></div>
+<div class="water-sparkle"></div>
+<div class="water-sparkle"></div>
+<div class="water-sparkle"></div>
+<div class="water-sparkle"></div>
+<div class="water-sparkle"></div>
+
+<div class="river-krathong krathong-1">🪷</div>
+<div class="river-krathong krathong-2">🪷</div>
+<div class="river-krathong krathong-3">🪷</div>
+
+<!-- หน้าแรก -->
+
+<div class="container" id="firstPage">
+
+    <div class="greeting">
+        Happy Loy Krathong Day na ka
+    </div>
+
+    <img
+        src="krathong.png"
+        alt="กระทงที่วาดด้วยความตั้งใจ"
+        class="krathong"
+    >
+
+    <h1>ลอยกระทงกับเค้านะ</h1>
+
+    <p class="subtitle">
+        คืนนี้พระจันทร์สวยนะบี๋ มาลอยกระทงกับเค้า👉🏼👈🏼
+    </p>
+
+    <div class="message">
+        ถึง <span class="name">เนยอ้วงของแตม🥹</span>🫶🏼<br><br>
+
+        เค้าตั้งใจทำให้เลยนะคะ😴<br>
+        หวังว่าเนยอ้วงจะชอบนะคะ<br><br>
+
+        มะรุ้วว่าสวยไหมนะคะแต่ตั้งใจมาก<br>
+        คิดถึงจัง <br><br>
+
+        อยากลอยกระทงด้วยกันจัง<br>
+        มาลอยด้วยกันในนี้นะคะ😊<br><br>
+
+        มาลอยด้วยกานค่ะะะะะะะะ 💗
+    </div>
+
+    <button onclick="goToSecondPage()">
+        ไปหน้าลอยกระทงด้วยกัน 🪷
+    </button>
+
+    <footer>
+        ทำขึ้นด้วยความรัก ในคืนที่พระจันทร์สวยที่สุด ✨
+    </footer>
+
+</div>
+
+<!-- หน้าที่สอง -->
+
+<div id="secondPage">
+
+    <div class="second-moon"></div>
+    <div class="second-stars"></div>
+
+    <div class="petal">✿</div>
+    <div class="petal">❀</div>
+    <div class="petal">✿</div>
+    <div class="petal">❀</div>
+
+    <div class="second-container">
+
+        <div class="second-kicker">
+            Loy krathong night
+        </div>
+
+        <h1 class="second-title">
+            คืนของแตมและเนย😸
+        </h1>
+
+        <p class="second-text">
+            คืนนี้มีพระจันทร์เป็นพยาน<br>
+            ว่าแตมกับเนยลอยกระทงด้วยกานน👉🏼👈🏼
+        </p>
+
+        <div class="river-scene" id="riverScene">
+
+            <div class="river-texture"></div>
+
+            <div class="river-wave"></div>
+            <div class="river-wave"></div>
+            <div class="river-wave"></div>
+            <div class="river-wave"></div>
+
+            <div class="river-glimmer"></div>
+            <div class="river-glimmer"></div>
+            <div class="river-glimmer"></div>
+            <div class="river-glimmer"></div>
+            <div class="river-glimmer"></div>
+
+            <div class="release-glow"></div>
+
+            <div class="pair-area" id="pairArea">
+
+                <div class="krathong-person">
+                    <div class="krathong-ripple"></div>
+                    <span class="pair-krathong">🪷</span>
+                    <span class="pair-label">ของแตมอ้วง🫶🏼</span>
+                    <div class="krathong-reflection"></div>
+                </div>
+
+                <div class="krathong-person">
+                    <div class="krathong-ripple"></div>
+                    <span class="pair-krathong">🪷</span>
+                    <span class="pair-label">ของเนยอ้วง🤏🏼</span>
+                    <div class="krathong-reflection"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <p class="second-text">
+            ขอให้กระทงสองใบนี้<br>
+            ลอยไปพร้อมกันเหมือนเราสองคนนะคะะะะ
+        </p>
+
+        <div class="wish-card">
+            <div class="wish-heading">
+                ✨ คำอธิษฐานของเราทั้งสองงง ✨
+            </div>
+
+            <textarea
+                id="wishInput"
+                placeholder="ลองเขียนคำอธิษฐานของเราตรงนี้นะคะะ 💝"
+            ></textarea>
+        </div>
+
+        <div id="togetherMessage">
+            พร้อมรึยางคะ<br>
+            เรามาลอยกระทงด้วยกันนะะคะะ🫳🏼
+        </div>
+
+        <button id="floatButton" onclick="floatTogether()">
+            ลอยกระทงด้วยกัน 🪷😸
+        </button>
+
+        <button id="backButton" onclick="backToFirstPage()">
+            กลับไปอ่านข้อความเดิมมม
+        </button>
+
+        <!-- ปุ่มเปิดหน้าคำอวยพร -->
+        <button id="wishPageButton" onclick="goToWishPage()" style="
+            display:block;
+            width:auto;
+            margin:12px auto;
+            background:linear-gradient(135deg,#f3d3a5,#f4b9cf);
+            color:#674052;
+        ">
+            อ่านคำอวยพรจากแตมอ้วง 💌💖
+        </button>
+
+        <div class="second-footer">
+            ไม่ว่าจะอยู่ใกล้หรือไกล<br>
+            เค้าก็อยากมีบี๋ในทุกเทศกาลทุกเวลาตลอดไปนะ ✨😸
+            <br><br>
+            Made with love by แตมอ้วง🫶🏼
+        </div>
+
+    </div>
+</div>
+
+<!-- ================= หน้าที่สาม: คำอวยพรจากแตมอ้วง💗 ================= -->
+
+<div id="wishPage">
+
+    <div class="wish-page-inner">
+
+        <div class="wish-page-kicker">
+            A LETTER FROM ZATAMP 💌
+        </div>
+
+        <h1 class="wish-page-title">
+            คำอวยพรจากแตมอ้วง💗
+        </h1>
+
+        <div class="letter-card">
+
+            <div class="letter-flower">🌷</div>
+
+            <div class="letter-greeting">
+                ถึงเนยอ้วงของแตม 💗
+            </div>
+
+            <div class="letter-content">
+ในวันพิเศษแบบนี้ แตมมีคำอวยพรอยากบอกเนยนะคะะะะ
+
+ขอบคุณสำหรับทุกๆอย่างนะคะที่ทำให้เค้ามาเสมอออ
+ขอให้เราทั้งคู่อยุ่ด้วยกานจนมีครบทุกๆสิ่งนะคะะะ
+อยากบอกว่า เค้าตั้งใจมำให้ดีที่สุดเลยนะคะ 
+เค้ารักบี๋นะคะ ขอให้พรทุกข้อที่เค้ามีเป็นของบี๋นะคะ
+
+ขอให้เบบี๋เนยยิ้มเยอะะๆๆๆนะคะะ
+ขอให้ด้ายเกรดดีๆ เรียนเก่งๆเข้าจายยย
+ขอให้มะเหนื่อย มะเพลียยยยยย
+
+ขอบคุณที่เข้ามาเป็นความสุขในชีวติของเค้านะะ
+เค้าดีจายมักกที่มีบี๋
+สุดท้ายนี้ขอให้เราทั้งคู่มีกันและกันตลอดปาย มีแต่เรื่องดีๆนะคะ
+อยุ่ดูแลเค้าปายนานนๆๆๆๆเลยนะคะะะ รักนะคะเนย💖
+            </div>
+
+            <div class="letter-divider"></div>
+
+            <div class="letter-signature">
+                รักเนยอ้วงนะคะ<br>
+                จาก แตมอ้วงของเนย 💗
+            </div>
+
+            <div class="letter-decoration">
+                ✿ ✧ ♡ ✧ ✿
+            </div>
+
+        </div>
+
+        <button class="wish-back-button" onclick="backToSecondPage()">
+            กลับไปหน้าลอยกระทง 🪷
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+function goToSecondPage() {
+    document.getElementById("firstPage").style.display = "none";
+    document.getElementById("secondPage").style.display = "block";
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+function backToFirstPage() {
+    document.getElementById("secondPage").style.display = "none";
+    document.getElementById("firstPage").style.display = "block";
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+/* เปิดหน้าคำอวยพร */
+function goToWishPage() {
+    document.getElementById("secondPage").style.display = "none";
+    document.getElementById("wishPage").style.display = "block";
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+/* กลับจากหน้าคำอวยพร */
+function backToSecondPage() {
+    document.getElementById("wishPage").style.display = "none";
+    document.getElementById("secondPage").style.display = "block";
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+function floatTogether() {
+
+    const riverScene = document.getElementById("riverScene");
+    const message = document.getElementById("togetherMessage");
+    const button = document.getElementById("floatButton");
+    const wishInput = document.getElementById("wishInput");
+
+    if (riverScene.classList.contains("released")) {
+        return;
+    }
+
+    /* เริ่มอนิเมชั่นกระทง */
+    riverScene.classList.add("released");
+
+    const wish = wishInput.value.trim();
+
+    if (wish) {
+        message.innerHTML =
+            "กระทงของเราลอยไปพร้อมคำอธิษฐานแล้วนะคะ 🥹💗<br>" +
+            "“" + escapeHTML(wish) + "”<br>" +
+            "ขอให้คำอธิษฐานนี้เป็นจริงนะะ";
+    } else {
+        message.innerHTML =
+            "ลอยไปด้วยกันแล้วนะคะ 🥹💗<br>" +
+            "ขอให้เราได้อยู่ด้วยกันแบบนี้ไปนานๆเลย";
+    }
+
+    wishInput.disabled = true;
+    button.innerHTML = "ลอยกระทงด้วยกันแล้ว 💗";
+    button.disabled = true;
+    button.style.opacity = ".7";
+
+    const emojis = ["💗","✨","🌸","💕","🪷"];
+
+    for (let i = 0; i < 35; i++) {
+        const heart = document.createElement("div");
+
+        heart.className = "heart";
+        heart.innerHTML =
+            emojis[Math.floor(Math.random() * emojis.length)];
+
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration =
+            (3 + Math.random() * 4) + "s";
+        heart.style.animationDelay =
+            Math.random() * 2 + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 9000);
+    }
+}
+
+function escapeHTML(text) {
+    const div = document.createElement("div");
+    div.textContent = text;
+    return div.innerHTML;
+}
+</script>
+
+</body>
+</html>
